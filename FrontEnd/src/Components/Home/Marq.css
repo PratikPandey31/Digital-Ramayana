@@ -1,0 +1,29 @@
+.slider-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;  /* Ensure it takes the full width of the parent */
+}
+
+.slider {
+  display: inline-block;
+  animation: slide 20s linear infinite;
+  animation-play-state: running; /* Ensure the animation is running by default */
+}
+
+.slider:hover {
+  animation-play-state: paused; /* Pause the animation on hover */
+}
+
+.slider .book {
+  display: inline-block;
+  margin-right: 20px;  /* Space between items */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
