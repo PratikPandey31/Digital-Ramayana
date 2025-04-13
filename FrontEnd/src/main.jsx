@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from "react-dom/client"
 import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import Layout from './layout'
+import Layout from './Layout';
 import { Home, About, NotFound, BookViewerPage } from './Components'
 import KandPage from './Components/Book-Viewer/KandPage'
 import { Provider } from 'react-redux'
