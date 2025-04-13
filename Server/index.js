@@ -7,7 +7,7 @@ const cors = require('cors');
 const balKand = require('./models/balKand.js');
 app.use(bodyParser.json());
 app.use(cors());
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('./models/user.js');
 const verifyToken = require('./authMiddleware')
