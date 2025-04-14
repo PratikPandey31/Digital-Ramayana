@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 function Ai() {
   const [response, setResponse] = useState("");
   async function generateText(prompt) {
-    const response = await fetch('http://localhost:3000/api', {
+    const response = await fetch('http://localhost:8000/api', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'

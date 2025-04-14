@@ -12,7 +12,7 @@ export default function Registration() {
       const userData = { username, email, password };
   
       try {
-        const response = await fetch('http://localhost:3000/register', {
+        const response = await fetch('http://localhost:8000/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

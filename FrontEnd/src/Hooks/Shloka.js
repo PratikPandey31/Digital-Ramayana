@@ -12,8 +12,8 @@ export default function useShloka(id, subid = null) {
       try {
 
         const url = subid 
-          ? `http://localhost:3000/balKand/${id}/${subid}` 
-          : `http://localhost:3000/balKand/${id}`;
+          ? `http://localhost:8000/balKand/${id}/${subid}` 
+          : `http://localhost:8000/balKand/${id}`;
           const response = await fetch(url, { headers: { 'Authorization': `Bearer ${token}`,},})
         if (!response.ok) {
           throw new Error('Please login first');
