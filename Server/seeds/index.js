@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const balKand = require('../models/balKand.js');
 const balKandSlokas = require('./Balkand/BalkandSarg6.js');
-
+pratik90394:av6PrmkRH5fncnTN@ac-tw8mlu7-shard-00-00.prpj7yk.mongodb.net:27017,ac-tw8mlu7-shard-00-01.prpj7yk.mongodb.net:27017,ac-tw8mlu7-shard-00-02.prpj7yk.mongodb.net:27017/?replicaSet=atlas-lsu08c-shard-0&ssl=true&authSource=admin&retryWrites=true&w=majority&appName=Cluster0
 async function connectAndInsertData() {
-  try {mongodb:'pratik90394:av6PrmkRH5fncnTN@ac-tw8mlu7-shard-00-00.prpj7yk.mongodb.net:27017,ac-tw8mlu7-shard-00-01.prpj7yk.mongodb.net:27017,ac-tw8mlu7-shard-00-02.prpj7yk.mongodb.net:27017/?replicaSet=atlas-lsu08c-shard-0&ssl=true&authSource=admin&retryWrites=true&w=majority&appName=Cluster0'}
+  try {mongodb:''}
 
   //
 

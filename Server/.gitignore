@@ -1,0 +1,64 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment files (important!)
+.env
+.env.*.local
+
+# Node modules (server & client)
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build output
+dist/
+client/dist/
+server/dist/
+build/
+client/build/
+server/build/
+
+# Vite specific cache
+client/.vite/
+client/.vite-cache/
+client/.cache/
+
+# Coverage / test
+coverage/
+*.lcov
+
+# Editor/IDE config
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Mac/Linux swap/lock/temp
+*.swp
+*.lock
+
+# Optional yarn/npm
+.yarn/cache
+.pnp.*
+.yarn-integrity
+package-lock.json
+yarn.lock
+seeds
+
+
+
+
