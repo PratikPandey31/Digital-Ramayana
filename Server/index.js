@@ -13,18 +13,23 @@ const User = require('./models/user.js');
 const verifyToken = require('./authMiddleware')
 const path = require('path');
 app.use(express.json())
+const cors = require('cors');
+app.use(cors({
+  origin: "https://digital-ramayana-frontend.onrender.com",
+  credentials: true
+}));
 
 
 
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("MONGO CONNECTION OPEN!!!");
-  })
-  .catch(err => {
-    console.log("OH NO MONGO CONNECTION ERROR!!!!");
-    console.log(err);
-  });
+
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("MongoDB connected successfully!"))
+.catch(err => console.error("MongoDB connection error:", err));
+
 
  app.post('/register', async (req, res) => {
   try {
