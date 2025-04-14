@@ -5,10 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server: {
     port: process.env.PORT || 5173,
+    allowedHosts: ['digital-ramayana-6.onrender.com'],
     host: '0.0.0.0'
   },
   plugins: [react()],
 })
+
+
 
 
 
