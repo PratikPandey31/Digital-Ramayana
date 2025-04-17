@@ -12,12 +12,9 @@ const verifyToken = require('./authMiddleware')
 const path = require('path');
 app.use(express.json())
 const cors = require('cors');
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://digital-ramayana-frontend.onrender.com");
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  next();
-});
+const cors = require('cors');
+app.options('*', cors());
+
 
 
 
