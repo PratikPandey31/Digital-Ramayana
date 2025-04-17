@@ -38,40 +38,52 @@ mongoose.connect(process.env.MONGO_URI, {
 app.post('/register', async (req, res) => {
   try {
     const { username, email, password } = req.body;
+
+    if (!username || !email || !password) {
+      return res.status(400).json({ error: 'All fields are required' });
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({ username, email, password: hashedPassword });
     await user.save();
+
     res.status(201).json({ message: 'Registration successful' });
   } catch (error) {
-    res.status(500).json({ error: 'Registration failed' });
+    console.error("Registration error:", error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+
 
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
+    
+    // Validate input
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password are required' });
+    }
+
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(401).json({ error: 'Authentication failed. Try Again.' });
+      return res.status(401).json({ error: 'Invalid credentials' });
     }
 
     const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
-      return res.status(401).json({ error: 'Authentication failed. Try Again.' });
-    }
-
-    if (!process.env.JWT_SECRET) {
-      throw new Error('Missing JWT_SECRET');
+      return res.status(401).json({ error: 'Invalid credentials' });
     }
 
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    res.header('Authorization', `Bearer ${token}`).status(200).json({ token, userId: user._id });
+    res.status(200).json({ token, userId: user._id });
   } catch (error) {
     console.error('Login Error:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 
 app.get('/balKand/:id/:subId', verifyToken, async (req, res) => {
   try {
