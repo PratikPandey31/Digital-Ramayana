@@ -14,7 +14,7 @@ export default function Login() {
         setLoading(true); 
 
         try {
-            const response = await fetch('https://digital-ramayana.onrender.com/login', {
+            const response = await fetch('https://digital-ramayana.onrender.com/logi', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
