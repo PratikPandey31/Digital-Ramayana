@@ -35,6 +35,7 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log("MongoDB connected successfully!"))
 .catch(err => console.error("MongoDB connection error:", err));
 
+
 app.post('/register', async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -43,11 +44,17 @@ app.post('/register', async (req, res) => {
       return res.status(400).json({ error: 'All fields are required' });
     }
 
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(409).json({ error: 'Email already in use' });
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({ username, email, password: hashedPassword });
     await user.save();
 
     res.status(201).json({ message: 'Registration successful' });
+
   } catch (error) {
     console.error("Registration error:", error);
     res.status(500).json({ error: 'Internal Server Error' });
@@ -55,12 +62,10 @@ app.post('/register', async (req, res) => {
 });
 
 
-
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     
-    // Validate input
     if (!email || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
     }
