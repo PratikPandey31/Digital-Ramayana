@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './Button'
-import { Vocabulary, VerseView, Translate, Play } from '../../Assests/Main-Content-Shlok'
+import { Vocabulary, VerseView, Translate, Play } from '../../Assets/Main-Content-Shlok'
 import { useSelector, useDispatch } from 'react-redux'
 import { addLeftMessage, addSearchShloka, togglePlay, toggleTranslate, toggleVocabulary } from '../../Features/ramayan/ramayanSlice'
 import "../../index.css"

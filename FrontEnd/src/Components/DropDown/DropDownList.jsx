@@ -33,8 +33,8 @@
 import React, { useState, useEffect } from 'react'
 import DropDownItem from './DropDownItem'
 import "./DropDown.css"
-import Blog from '../../Assests/Drop-Down/Blog';
-import Docs from '../../Assests/Drop-Down/Docs';
+import Blog from '../../Assets/Drop-Down/Blog';
+import Docs from '../../Assets/Drop-Down/Docs';
 
 function DropDownList() {
   const [isActive, setIsActive] = useState(false);

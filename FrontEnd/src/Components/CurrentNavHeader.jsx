@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
-import Arrow from '../Assests/Main-Content-Shlok/Arrow'
+import Arrow from '../Assets/Main-Content-Shlok/Arrow'
 
 function CurrentNavHeader() {
   const location = useLocation();
