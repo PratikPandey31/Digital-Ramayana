@@ -5,9 +5,12 @@ function json()  {
   const [slokas, setSlokas] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async () => {          
       try {
-        const response = await fetch('https://digital-ramayana.onrender.com/api/ramayan/balKand/:id/:subId');
+        const response = await fetch('https://digital-ramayana.onrender.com/balKand/:id/:subId',{headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/json', 
+        }});
         const data = await response.json();
         setSlokas([data]);
         console.log(data);

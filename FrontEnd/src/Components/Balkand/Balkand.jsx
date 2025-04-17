@@ -7,10 +7,15 @@ function Balkand() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://digital-ramayana.onrender.com/api/ramayan/balKand');
+        const response = await fetch('https://digital-ramayana.onrender.com/ramayana/balKand', {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/json', 
+          },
+        });
+        
         const data = await response.json();
         setSlokas([data]);
-        console.log(data);
       } catch (error) {
         console.error('Error fetching poems:', error);
       }
