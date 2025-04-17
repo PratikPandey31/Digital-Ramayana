@@ -11,11 +11,11 @@ const User = require('./models/user.js');
 const verifyToken = require('./authMiddleware')
 const path = require('path');
 app.use(express.json())
-const cors = require('cors');
-app.use(cors({
-  origin: "https://digital-ramayana-frontend.onrender.com",
-  credentials: true
-}));
+// const cors = require('cors');
+// app.use(cors({
+//   origin: "https://digital-ramayana-frontend.onrender.com",
+//   credentials: true
+// }));
 
 
 

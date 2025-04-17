@@ -58,7 +58,7 @@ coverage/
 package-lock.json
 yarn.lock
 
-server/seeds/
+Server/seeds/
 
 
 
