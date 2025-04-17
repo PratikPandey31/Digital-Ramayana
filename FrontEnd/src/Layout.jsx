@@ -6,7 +6,7 @@ function Layout() {
   return (
 
     <div className="" style={{
-      backgroundImage: `url('./src/Assets/Landing-page/Background.jpg')`,
+      backgroundImage: `url('./Background.jpg')`,
       backgroundSize: 'cover'
       }}>
       <Header />
