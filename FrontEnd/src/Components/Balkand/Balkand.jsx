@@ -7,7 +7,7 @@ function Balkand() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/ramayan/balKand');
+        const response = await fetch('https://digital-ramayana.onrender.com/api/ramayan/balKand');
         const data = await response.json();
         setSlokas([data]);
         console.log(data);
