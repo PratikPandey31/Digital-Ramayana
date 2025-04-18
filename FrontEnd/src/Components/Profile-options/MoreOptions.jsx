@@ -7,8 +7,7 @@ function MoreOptions() {
     <div className='w-1/4 relative'>
       <div className="size-12 ml-auto">
         <button onClick={() => setIsActive(!isActive)}>
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            className="size-12 rounded-full overflow-hidden cursor-pointer bg-white"
+        <img src="/setting.png" className="size-12 rounded-full overflow-hidden cursor-pointer bg-white"
             alt="menu-trigger" />
         </button>
       </div>
