@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 import { store } from "./App/store";
 import Registration from './Components/Auth/Registration'
 import Login from './Components/Auth/Login'
+import ProtectedRoute from './Components/Auth/ProtectedRoute';
 
 
 
@@ -26,8 +27,8 @@ const router = createBrowserRouter(
 
       <Route path='/' >
       <Route path='/ramayan/balkand' element={<BookViewerPage  />} />
-        <Route path='/ramayan/balkand/:id' element={<BookViewerPage  />} />
-        <Route path='ramayan/balkand/:id/:subId' element={<BookViewerPage />} />
+        <Route path='/ramayan/balkand/:id' element={<ProtectedRoute><BookViewerPage /></ProtectedRoute>} />
+        <Route path='ramayan/balkand/:id/:subId' element={<ProtectedRoute><BookViewerPage /></ProtectedRoute>} />
         <Route path='' element={<BookViewerPage />} />
       </Route>
     </Route>
