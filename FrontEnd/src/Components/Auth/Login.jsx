@@ -28,8 +28,8 @@ export default function Login() {
             if (response.ok) {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('userId', data.userId);
-                const redirectPath = location.state?.from?.pathname || 'https://digital-ramayana-frontend.onrender.com/ramayan/balKand/1';
-                window.location.replace(redirectPath);
+                const redirectPath = location.state?.from?.pathname || '/ramayan/balKand/1';
+                navigate(redirectPath, { replace: true });
 
             } else {
                 setError(data.error || 'Invalid credentials');
@@ -43,7 +43,7 @@ export default function Login() {
 
     return (
       <div className="flex items-center justify-center h-screen">
-        <div className="h-98 custom-div max-w-md bg-opacity-10 rounded-lg shadow-2xl bg-gray-800 m-9 p-4 flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+        <div className="h-98 custom-div max-w-md bg-opacity-30 rounded-lg shadow-2xl bg-gray-800 m-9 p-4 flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
               Log in
