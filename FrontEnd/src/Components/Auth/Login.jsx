@@ -100,15 +100,26 @@ export default function Login() {
                   type="submit"
                   disabled={loading} // 🔹 Disable button while logging in
                   className={`flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold text-white shadow-sm ${
-                    loading ? 'bg-gray-500' : 'bg-indigo-600 hover:bg-indigo-500'
+                    loading ? 'bg-gray-500' : 'bg-red-600 hover:bg-red-500'
                   } focus-visible:outline focus-visible:ring-2 focus-visible:ring-indigo-600`}
                 >
                   {loading ? 'Logging in...' : 'Log in'}
                 </button>
               </div>
-              {error && <div className="text-red-600 mt-2 text-sm">{error}</div>}
+              <div className="mt-4 text-center">
+         <p className="text-sm text-gray-500">Don't have an account?</p>
+      </div>
             </form>
           </div>
+          <div className="mt-4 text-center">
+  <p className="text-sm text-gray-500">Don't have an account?</p>
+  <button
+    onClick={() => navigate('/register')}
+    className="mt-2 w-full rounded-md bg-green-600 hover:bg-green-500 text-white px-3 py-1.5 text-sm font-semibold shadow-sm"
+  >
+    Register Now
+  </button>
+    </div>
         </div>
       </div>
     );
