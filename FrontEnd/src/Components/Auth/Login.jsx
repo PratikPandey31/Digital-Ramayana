@@ -108,7 +108,7 @@ export default function Login() {
             </form>
           </div>
           <div className="mt-4 text-center">
-  <p className="text-sm text-gray-500">Don't have an account?</p>
+  <p className="text-sm text-black">Don't have an account?</p>
   <button
     onClick={() => navigate('/register')}
     className="mt-2 w-full rounded-md bg-orange-500 hover:bg-orange-300 text-white px-3 py-1.5 text-sm font-semibold shadow-sm"
