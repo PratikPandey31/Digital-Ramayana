@@ -25,7 +25,7 @@ export default function Registration() {
         const result = await response.json();
         if (response.ok) {
           const redirectPath = location.state?.from?.pathname || 'https://digital-ramayana-frontend.onrender.com/ramayan/balKand/1';
-          navigate(redirectPath, { replace: true });
+          window.location.replace(redirectPath);
         } else {
           alert('Registration failed: ' + result.error);
         }

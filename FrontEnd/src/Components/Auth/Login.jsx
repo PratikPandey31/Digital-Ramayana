@@ -29,7 +29,8 @@ export default function Login() {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('userId', data.userId);
                 const redirectPath = location.state?.from?.pathname || 'https://digital-ramayana-frontend.onrender.com/ramayan/balKand/1';
-                navigate(redirectPath, { replace: true });
+                window.location.replace(redirectPath);
+
             } else {
                 setError(data.error || 'Invalid credentials');
             }
