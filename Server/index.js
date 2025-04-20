@@ -90,31 +90,34 @@ app.post('/login', async (req, res) => {
 });
 
 
-app.get('/balKand/:id/:subId', verifyToken, async (req, res) => {
+app.get('/balKand/:id/:subId',verifyToken, async (req, res) => {
   try {
-    const info = `1.${req.params.id}`;
-    const subInfo = req.params.subId;
-
-    if (subInfo.length === 2) {
-      const slokas = await balKand.findOne({ id: `${info}.${subInfo}` });
-      res.json(slokas);
-    } else if (subInfo.length < 2) {
-      return res.status(400).json({ error: 'Invalid subId' });
-    } else {
-      const [a, b] = subInfo.split("-");
-      const slokas = await balKand.find({
-        id: {
-          $gte: `${info}.${a}`,
-          $lte: `${info}.${b}`
-        }
-      });
-      res.json(slokas);
-    }
+      const info = "1." + req.params.id.toString();
+      const subInfo = req.params.subId.toString();
+      if(subInfo.length === 2){
+      const slokas = await balKand.findOne({ id: info +"."+ subInfo });
+      res.json(slokas);  }
+      else if(subInfo.length < 2){
+          return res.status(400).json({ error: 'Invalid subId' });
+      }
+      else{
+          const [a,b] = subInfo.split("-");       
+          const slokas = await balKand.find({
+            id: {
+              $gte: `${info}.${a}`,
+              $lte: `${info}.${b}`
+            }
+          }   
+        );
+          res.json(slokas);  
+      }
   } catch (error) {
-    console.error('Error fetching slokas:', error);
-    res.status(500).send('Internal Server Error');
+      console.error('Error fetching slokas:', error);
+      res.status(500).send('Internal Server Error');
   }
 });
+
+
 
 app.get('/balKand/:id', verifyToken, async (req, res) => {
   try {
