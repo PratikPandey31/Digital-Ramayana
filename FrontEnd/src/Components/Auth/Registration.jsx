@@ -51,7 +51,7 @@ export default function Registration() {
               <label htmlFor="name" className="block text-xl/6 font-medium text-gray-900">
                 Name
               </label>
-              <div className="mt-2">
+              <div className="mt-2 pl-2">
                 <input
                   id="name"
                   name="name"
@@ -67,7 +67,7 @@ export default function Registration() {
               <label htmlFor="email" className="block text-xl/6 font-medium text-gray-900">
                 Email address
               </label>
-              <div className="mt-2">
+              <div className="mt-2 pl-2">
                 <input
                   id="email"
                   name="email"
@@ -92,7 +92,7 @@ export default function Registration() {
                   </a>
                 </div>
               </div>
-              <div className="mt-2">
+              <div className="mt-2 pl-2">
                 <input
                   id="password"
                   name="password"
